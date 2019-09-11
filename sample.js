@@ -41,7 +41,7 @@ $(document).ready(function(){
 
   function get_pass_or_failure(subject_points){
     let judge;
-    let subject_point = [Number($('#national_language').val()),
+    let subject_point = [ Number($('#national_language').val()),
                           Number($('#english').val()),
                           Number($('#mathematics').val()),
                           Number($('#science').val()),
@@ -51,7 +51,8 @@ $(document).ready(function(){
       if(subject_point[i] >= 60){
         judge = "合格"
       }else{
-        judge = "不合格"
+        judge = "不合格";
+        break;
       }
     }
       $("#judge").text(judge);
