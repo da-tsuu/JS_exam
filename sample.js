@@ -11,11 +11,12 @@ $(document).ready(function(){
 
     // さらにこのような記述をすることで、「合計点：」となっている右の部分に合計点が出力される
     let sum = 0;
-    for(let i=0; i<5; i++){
+    let number = subject_points.length;
+    for(let i=0; i<number; i++){
       sum = sum + subject_points[i];
       $("#sum_indicate").text(sum);
     }
-    let avg = sum / 5
+    let avg = sum / number
     $("#average_indicate").text(avg);
   };
 
@@ -39,7 +40,7 @@ $(document).ready(function(){
 
 
 
-  function get_pass_or_failure(subject_points){
+  function get_pass_or_failure(){
     let judge;
     let subject_point = [ Number($('#national_language').val()),
                           Number($('#english').val()),
@@ -47,7 +48,8 @@ $(document).ready(function(){
                           Number($('#science').val()),
                           Number($('#society').val())
                           ];
-    for(let i=0; i<5; i++){
+    let number = subject_point.length;
+    for(let i=0; i<number; i++){
       if(subject_point[i] >= 60){
         judge = "合格"
       }else{
