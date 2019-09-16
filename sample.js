@@ -68,6 +68,7 @@ $(document).ready(function(){
     // 下記の記述をすることで、「最終ジャッジ」のボタンを押すと「あなたの成績は（ここに「ランク」の値を入れる）です。（ここに「判定」の値を入れる）です」という文字の入った水色のフキダシが出力される処理が実装される。
     let achievement = get_achievement()
     let pass_or_failure = get_pass_or_failure()
+    if (document.getElementById("alert-indicate") != null){ $('#alert-indicate').remove(); }
     $('#declaration').append(`<label id="alert-indicate" class="alert alert-info">あなたの成績は${achievement}です。${pass_or_failure}です</label>`);
   };
     $('#national_language, #english, #mathematics, #science, #society').change(function() {
